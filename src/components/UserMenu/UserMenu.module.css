@@ -1,0 +1,10 @@
+.userSection {
+  display: flex;
+  gap: 15px;
+}
+.button {
+  background-color: white;
+}
+.userName {
+  font-size: 18px;
+}

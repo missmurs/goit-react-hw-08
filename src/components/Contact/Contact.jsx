@@ -6,7 +6,7 @@ import { apiDeleteContacts } from "../../redux/contacts/operations";
 
 import css from "./Contact.module.css";
 
-export const Contact = ({ id, name, number }) => {
+const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const onDeleteContact = (id) => {
     dispatch(apiDeleteContacts(id));
@@ -36,3 +36,4 @@ export const Contact = ({ id, name, number }) => {
     </>
   );
 };
+export default Contact;
