@@ -79,7 +79,8 @@ const authSlice = createSlice({
       })
       .addCase(apiLogout.fulfilled, (state) => {
         state.contacts = [];
-        return INITIAL_STATE;
+        state.error = null;
+        state.isLoggedIn = false;
       })
       .addCase(apiLogout.rejected, (state, action) => {
         state.error = action.payload;
