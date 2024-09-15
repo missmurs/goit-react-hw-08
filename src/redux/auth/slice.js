@@ -77,7 +77,8 @@ const authSlice = createSlice({
       .addCase(apiLogout.pending, (state) => {
         state.error = null;
       })
-      .addCase(apiLogout.fulfilled, () => {
+      .addCase(apiLogout.fulfilled, (state) => {
+        state.contacts = [];
         return INITIAL_STATE;
       })
       .addCase(apiLogout.rejected, (state, action) => {
