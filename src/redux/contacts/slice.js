@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   isLoading: false,
   error: null,
 };
-
+import { apiLogout } from "../auth/operations";
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: INITIAL_STATE,
@@ -69,6 +69,10 @@ const contactsSlice = createSlice({
       .addCase(apiAddContacts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+      })
+
+      .addCase(apiLogout.fulfilled, () => {
+        return INITIAL_STATE;
       }),
 });
 
